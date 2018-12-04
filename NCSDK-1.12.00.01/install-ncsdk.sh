@@ -581,7 +581,7 @@ if [ $INSTALL_TOOLKIT == 'yes' ]; then
 		install_rock64_python_dependencies
 	fi
 
-	check_and_install_caffe
+	# check_and_install_caffe
 
 	# Add PYTHONPATH if not already there
 	printf "Removing previous references to previous caffe installation..."

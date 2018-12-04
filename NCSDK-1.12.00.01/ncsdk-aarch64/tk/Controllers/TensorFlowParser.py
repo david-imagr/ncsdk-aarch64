@@ -1056,7 +1056,8 @@ def parse_tensor(arguments, myriad_conf, preprocess=True, debug=False, file_gen=
                     print("Reshape")
                 inputs = node.inputs
                 input_shape = node.inputs[0].get_shape()
-                desired_shape = node.inputs[1].eval()
+                #desired_shape = node.inputs[1].eval()
+		desired_shape = node.inputs[1].eval(feed_dict={inputnode+':0' : input_data})
  
                 # Check for -1 in desired_shape
                 if -1 in desired_shape:
